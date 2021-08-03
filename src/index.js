@@ -3,12 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { ChakraProvider, ColorModeScript } from '@chakra-ui/react';
+import Router from './Router';
 
 ReactDOM.render(
     <React.StrictMode>
         <ChakraProvider>
             <ColorModeScript initialColorMode="dark" />
-                <App />
+                <Router />
         </ChakraProvider>
     </React.StrictMode>,
     document.getElementById('root')
