@@ -31,7 +31,12 @@ function AddTodo(props) {
     return (
         <form onSubmit={handleSubmit}>
             <HStack mt='8'>
-                <Input variant="filled" placeholder="buy milk at the store" value={content} onChange={e => setContent(e.target.value)} />
+                <Input
+                    autoFocus
+                    variant="filled"
+                    placeholder="buy milk at the store"
+                    value={content}
+                    onChange={e => setContent(e.target.value)} />
                 <Button colorScheme="pink" px="8" type="submit">
                     Add Todo
                 </Button>
