@@ -27,6 +27,12 @@ function AddTodo(props) {
 
         props.addTodo(todo)
         setContent("")
+        toast({
+            title: "Todo Added",
+            status: "success",
+            duration: 2000,
+            isClosable: true,
+        })
     }
 
     return (

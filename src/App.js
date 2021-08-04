@@ -1,4 +1,4 @@
-import { VStack } from '@chakra-ui/react'
+import { useToast, VStack } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import TopButtons from './components/TopButtons'
 import Home from './pages/Home'
@@ -6,6 +6,7 @@ import { HashRouter, Switch, Route } from 'react-router-dom'
 import Login from './pages/Login'
 
 function App() {
+    const toast = useToast()
 
     const [todos, setTodos] = useState(
         () => JSON.parse(localStorage.getItem('todos')) || []
@@ -18,6 +19,12 @@ function App() {
     const deleteTodo = id => {
         const newTodos = todos.filter(todo => todo.id !== id)
         setTodos(newTodos)
+        toast({
+            title: "Todo Deleted",
+            status: "info",
+            duration: 2000,
+            isClosable: true,
+        })
     }
 
     const addTodo = todo => {
