@@ -1,18 +1,21 @@
-import { useColorMode } from '@chakra-ui/react'
+import { HStack, useColorMode } from '@chakra-ui/react'
 import React from 'react'
-import { FaMoon, FaSun } from 'react-icons/fa'
+import { FaMoon, FaSun, FaUserCircle } from 'react-icons/fa'
 import TopIcon from './TopIcon'
 
 function TopButtons() {
     const { colorMode, toggleColorMode } = useColorMode()
 
     return (
-        <React.Fragment>
+        <HStack alignSelf='flex-end'>
             <TopIcon
                 icon={colorMode === 'light' ? <FaSun /> : <FaMoon />}
                 title="Toggle Color Mode"
                 onClick={toggleColorMode} />
-        </React.Fragment>
+            <TopIcon 
+            icon={<FaUserCircle />}
+            title="Account" />
+        </HStack>
     )
 }
 

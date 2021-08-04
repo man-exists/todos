@@ -1,11 +1,8 @@
-import { VStack, useColorMode } from '@chakra-ui/react'
+import { VStack } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
-import AddTodo from './components/AddTodo'
-import TodoList from './components/TodoList'
-import { FaSun, FaMoon } from 'react-icons/fa'
-import TopIcon from './components/TopIcon'
-import StyledHeader from './components/StyledHeader'
 import TopButtons from './components/TopButtons'
+import Home from './pages/Home'
+import { HashRouter, Switch, Route } from 'react-router-dom'
 
 function App() {
 
@@ -27,12 +24,16 @@ function App() {
     }
 
     return (
-        <VStack p={4}>
-            <TopButtons />
-            <StyledHeader>Todo Application</StyledHeader>
-            <TodoList todos={todos} deleteTodo={deleteTodo} />
-            <AddTodo addTodo={addTodo} />
-        </VStack>
+        <HashRouter>
+            <VStack p={4}>
+                <TopButtons />
+                <Switch>
+                    <Route exact path="/">
+                        <Home deleteTodo={deleteTodo} addTodo={addTodo} todos={todos} />
+                    </Route>
+                </Switch>
+            </VStack>
+        </HashRouter>
     )
 }
 
