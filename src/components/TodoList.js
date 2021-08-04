@@ -21,8 +21,14 @@ function TodoList(props) {
             alignItems="stretch" >
             {props.todos.map(todo => (
                 <HStack key={todo.id}>
-                        <Text fontSize='2xl'>{todo.body}</Text>
-                        <Text fontSize='sm'>{ta.ago(todo.timestamp)}</Text>
+                    <div>
+                        <Text fontSize='2xl'>
+                            {todo.body} <br />
+                        </Text>
+                        <Text fontSize='sm'>
+                            {ta.ago(todo.timestamp)}
+                        </Text>
+                    </div>
                     <Spacer />
                     <IconButton icon={<FaTrash />} isRound onClick={() => props.deleteTodo(todo.id)} />
                 </HStack>
