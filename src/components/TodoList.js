@@ -1,7 +1,7 @@
 import React from 'react'
 import ta from 'time-ago'
 import { FaTrash } from 'react-icons/fa'
-import { HStack, Text, VStack, IconButton, StackDivider, Spacer, Badge } from '@chakra-ui/react'
+import { HStack, Text, VStack, IconButton, StackDivider, Spacer, Badge, Stack } from '@chakra-ui/react'
 
 function TodoList(props) {
 
@@ -21,14 +21,14 @@ function TodoList(props) {
             alignItems="stretch" >
             {props.todos.map(todo => (
                 <HStack key={todo.id}>
-                    <div>
+                    <Stack direction='column'>
                         <Text fontSize='2xl'>
-                            {todo.body} <br />
+                            {todo.body}
                         </Text>
                         <Text fontSize='sm'>
                             {ta.ago(todo.timestamp)}
                         </Text>
-                    </div>
+                    </Stack>
                     <Spacer />
                     <IconButton icon={<FaTrash />} isRound onClick={() => props.deleteTodo(todo.id)} />
                 </HStack>
