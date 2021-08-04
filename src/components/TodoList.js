@@ -17,7 +17,7 @@ function TodoList(props) {
         setTodos(props.todos)
     }, [props.todos])
 
-    return !props.todos.length ? (
+    return !filteredTodos().length ? (
         <Badge colorScheme="green" p="4" m="4" borderRadius="lg" fontSize="medium">
             No Todos!
         </Badge>
