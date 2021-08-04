@@ -21,6 +21,7 @@ function AddTodo(props) {
 
         const todo = {
             id: nanoid(),
+            timestamp: Date.now(),
             body: content
         }
 
