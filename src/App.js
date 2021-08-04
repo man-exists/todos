@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import TopButtons from './components/TopButtons'
 import Home from './pages/Home'
 import { HashRouter, Switch, Route } from 'react-router-dom'
+import Login from './pages/Login'
 
 function App() {
 
@@ -30,6 +31,9 @@ function App() {
                 <Switch>
                     <Route exact path="/">
                         <Home deleteTodo={deleteTodo} addTodo={addTodo} todos={todos} />
+                    </Route>
+                    <Route path='/login'>
+                        <Login />
                     </Route>
                 </Switch>
             </VStack>

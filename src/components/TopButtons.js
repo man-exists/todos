@@ -1,6 +1,7 @@
 import { HStack, useColorMode } from '@chakra-ui/react'
 import React from 'react'
-import { FaMoon, FaSun, FaUserCircle } from 'react-icons/fa'
+import { FaHome, FaMoon, FaSun, FaUserCircle } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
 import TopIcon from './TopIcon'
 
 function TopButtons() {
@@ -12,9 +13,16 @@ function TopButtons() {
                 icon={colorMode === 'light' ? <FaSun /> : <FaMoon />}
                 title="Toggle Color Mode"
                 onClick={toggleColorMode} />
-            <TopIcon 
-            icon={<FaUserCircle />}
-            title="Account" />
+            <Link to="/login">
+                <TopIcon
+                    icon={<FaUserCircle />}
+                    title="Account Page" />
+            </Link>
+            <Link to="/">
+                <TopIcon
+                    icon={<FaHome />}
+                    title="Home Page" />
+            </Link>
         </HStack>
     )
 }
