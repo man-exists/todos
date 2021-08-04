@@ -6,7 +6,7 @@ import useAuth from '../hooks/useAuth'
 import firebase from 'firebase'
 
 function Login() {
-    const { user, isSignedIn } = useAuth()
+    const { isSignedIn } = useAuth()
 
     const signInWithGoogle = () => {
         firebase.auth().signInWithPopup(new firebase.auth.GoogleAuthProvider())

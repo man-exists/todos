@@ -30,7 +30,7 @@ function App() {
                 <TopButtons />
                 <Switch>
                     <Route exact path="/">
-                        <Home deleteTodo={deleteTodo} addTodo={addTodo} todos={todos} />
+                        <Home deleteTodo={deleteTodo} setTodos={setTodos} addTodo={addTodo} todos={todos} />
                     </Route>
                     <Route path='/login'>
                         <Login />

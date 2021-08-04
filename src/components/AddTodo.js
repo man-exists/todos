@@ -33,7 +33,6 @@ function AddTodo(props) {
         <form onSubmit={handleSubmit}>
             <HStack mt='8'>
                 <Input
-                    autoFocus
                     variant="filled"
                     placeholder="buy milk at the store"
                     value={content}

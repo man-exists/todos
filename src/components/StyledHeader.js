@@ -4,7 +4,6 @@ import React from 'react'
 function StyledHeader(props) {
     return (
         <Heading
-            mb='8'
             pb='4'
             fontWeight='extrabold'
             size='2xl'
